@@ -390,30 +390,15 @@ import Foundation
 //12.  Да се напише програма, която създава масив с всички букви от латинската азбука. Да се даде възможност на потребител да въвежда дума и в резултат да се извеждат индексите на буквите от думата.
 
 
+var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
 
-//func getLettersIndexes(of word: String) -> [Int] {
-//
-//    var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
-//
-//    let word = "dsfs"
-//    for i in 0..<alphabet.count {
-//    print(alphabet[i])
-//    }
-//
-//
-//for (index, element) in alphabet.enumerated() {
-//    for (index, element) in word.characters.enumerated() {
-//        if alphabet.index(of: element) ==  {
-//        
-//            print(index)
-//    }
-//}
-//}
-//    for name in word.characters {
-//       
-//}
-//return [0]
-//}
+let word = "abcd"
+
+for element in word.characters {
+
+    print(alphabet.index(of: String(element))!)
+    
+}
 
 
 //func getIndexFromArray() -> Int {
