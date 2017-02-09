@@ -361,16 +361,73 @@ import Foundation
 
 //4.    Напишете програма, която намира максималната редица от еднакви елементи в масив. Пример: {2, 1, 1, 2, 3, 3, 2, 2, 2, 1} -> {2, 2, 2}.
 
+//let row = [2, 1, 1, 2 ,3 ,3, 3, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 4, 5, 6, 1]
+//
+//var savedElement = 0
+//var count = 0
+//var max = 0
+//
+//for (index, value) in row.enumerated() {
+//
+//    if index == 0 {
+//     
+//        count = 1
+//    }
+//    else if value == row[index-1] {
+//        
+//        count += 1
+//    }
+//    else {
+//        
+//        if count > max {
+//            max = count
+//            savedElement = row[index-1]
+//        }
+//        count = 1
+//    }
+//}
+//
+//print(max, savedElement)
+
+
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 //5.    Напишете програма, която намира максималната редица от нараст­ващи елементи в масив. Пример: {3, 2, 3, 4, 2, 2, 4} -> {2, 3, 4}.
-//let numbers = [ 1, 3, 7, 11]
-//let x = 6
-//let closest = numbers.enumerated().min( by: { abs($0.1 - x) < abs($1.1 - x))
-//    print(closest.element) // 7
-//    print(closest.offset) // 2
+
+
+let row = [3, 2, 3, 4, 2, 2, 4]
+
+var savedElement = 0
+var count = 0
+var max = 0
+
+for (index, value) in row.enumerated() {
+    
+    if index == 0 {
+        
+        count = 1
+    }
+    else if value > row[index-1] {
+        
+        count += 1
+    }
+    else {
+        
+        if count > max {
+            max = count
+            savedElement = row[index-1]
+        }
+        count = 1
+    }
+}
+
+print(max, savedElement)
+
+
+
+
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 //7.    Сортиране на масив означава да подредим елементите му в нарастващ (намаляващ) ред. Напишете програма, която сортира масив. Да се използва алгоритъма "Selection sort".
@@ -390,33 +447,15 @@ import Foundation
 //12.  Да се напише програма, която създава масив с всички букви от латинската азбука. Да се даде възможност на потребител да въвежда дума и в резултат да се извеждат индексите на буквите от думата.
 
 
-var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
-
-let word = "abcd"
-
-for element in word.characters {
-
-    print(alphabet.index(of: String(element))!)
-    
-}
-
-
-//func getIndexFromArray() -> Int {
-
-//    return
+//var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+//
+//let word = "abcd"
+//
+//for element in word.characters {
+//
+//    print(alphabet.index(of: String(element))!)
+//    
 //}
 
-//for i in 0..<alphabet.count {
-//    print(alphabet[i])
-//}
-
-// test test
-// test test
-// test test
-// test test
-
-//for (index, letter) in alphabet.enumerated() {
-//    print("\(index) \(letter)")
-//}
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
