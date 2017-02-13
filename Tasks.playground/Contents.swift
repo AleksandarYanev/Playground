@@ -361,33 +361,34 @@ import Foundation
 
 //4.    Напишете програма, която намира максималната редица от еднакви елементи в масив. Пример: {2, 1, 1, 2, 3, 3, 2, 2, 2, 1} -> {2, 2, 2}.
 
-//let row = [2, 1, 1, 2 ,3 ,3, 3, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 4, 5, 6, 1]
+//let row = ["d", "e", "w", "a", "s", "s", "s", "s", "w"]
 //
-//var savedElement = 0
+//var lastElement = ""
 //var count = 0
 //var max = 0
 //
-//for (index, value) in row.enumerated() {
 //
+//for (index, value) in row.enumerated() {
+//    
 //    if index == 0 {
-//     
 //        count = 1
 //    }
 //    else if value == row[index-1] {
 //        
 //        count += 1
-//    }
-//    else {
 //        
 //        if count > max {
 //            max = count
-//            savedElement = row[index-1]
+//            lastElement = row[index-1]
 //        }
+//    }
+//    else {
+//        
 //        count = 1
 //    }
 //}
 //
-//print(max, savedElement)
+//print(max, lastElement)
 
 
 
@@ -397,34 +398,37 @@ import Foundation
 //5.    Напишете програма, която намира максималната редица от нараст­ващи елементи в масив. Пример: {3, 2, 3, 4, 2, 2, 4} -> {2, 3, 4}.
 
 
-let row = [3, 2, 3, 4, 2, 2, 4]
-
-var savedElement = 0
-var count = 0
-var max = 0
-
-for (index, value) in row.enumerated() {
-    
-    if index == 0 {
-        
-        count = 1
-    }
-    else if value > row[index-1] {
-        
-        count += 1
-    }
-    else {
-        
-        if count > max {
-            max = count
-            savedElement = row[index-1]
-        }
-        count = 1
-    }
-}
-
-print(max, savedElement)
-
+//let row = [3, 2, 3, 4, 2, 2, 4, 5, 6, 2, 7, 8, 9, 10, 11]
+//
+//var lastElement = 0
+//var count = 0
+//var max = 0
+//var index = 0
+//
+//for (index, value) in row.enumerated() {
+//    
+//    if index == 0 {
+//        
+//        count = 1
+//    }
+//    else if value - 1 == row[index-1] {
+//        
+//        count += 1
+//        
+//        if count > max {
+//            max = count
+//            lastElement = index + 1
+//        }
+//    }
+//    else {
+//
+//        count = 1
+//    }
+//}
+//
+//print(max, lastElement)
+//var slice = row[lastElement - max..<lastElement]
+//print(slice)
 
 
 
@@ -432,17 +436,92 @@ print(max, savedElement)
 
 //7.    Сортиране на масив означава да подредим елементите му в нарастващ (намаляващ) ред. Напишете програма, която сортира масив. Да се използва алгоритъма "Selection sort".
 
-//var numbersArray = [Int]()
+//let list = [ 10, -1, 3, 9, 2, 27, 8, 5, 1, 3, 0, 26 ]
 //
-//for number in 1...11 {
-//    numbersArray.append(number)
+//
+//func selectionSort(_ array: [Int]) -> [Int] {
+//    guard array.count > 1 else { return array }  // 1
+//    
+//    var a = array                    // 2
+//    
+//    for x in 0 ..< a.count - 1 {     // 3
+//        
+//        var lowest = x
+//        for y in x + 1 ..< a.count {   // 4
+//            if a[y] < a[lowest] {
+//                lowest = y
+//            }
+//        }
+//        
+//        if x != lowest {               // 5
+//            swap(&a[x], &a[lowest])
+//        }
+//    }
+//    return a
+//}
+//selectionSort(list)
+//
+//print(selectionSort(list))
+//
+//let numbers = [20, 10, 13, 14, 2, 5, 8, 5, 9, 4]
+//var lowest = 0
+//
+//func selectSort(in array: [Int]) -> [Int] {
+//    
+//    guard array.count > 1 else { return array }
+//    
+//    var a = array
+//    
+//    for x in 0..<a.count - 1 {
+//        
+//        lowest = x
+//        for y in x + 1..<a.count {
+//            if a[y] > a[lowest] {
+//                lowest = y
+//            }
+//        }
+//        
+//        if x != lowest {
+//           swap(&a[x], &a[lowest])
+//        }
+//    }
+//    return a
 //}
 //
-//numbersArray.sort {
-//    return $1 < $0
-//}
+//print(selectSort(in: numbers))
+
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+//15.  Напишете програма, която сортира целочислен масив по алгоритъма "quick sort".
+
+//var list = [ 8, 0, 3, 9, 2, 14, 10, 27, 1, 5, 8, -1, 26 ]
+//
+//func partitionHoare<T: Comparable>(_ a: inout [T], low: Int, high: Int) -> Int {
+//    let pivot = a[low]
+//    var i = low - 1
+//    var j = high + 1
+//    
+//    while true {
+//        repeat { j -= 1 } while a[j] > pivot
+//        repeat { i += 1 } while a[i] < pivot
+//        
+//        if i < j {
+//            swap(&a[i], &a[j])
+//        } else {
+//            return j
+//        }
+//    }
+//}
+//
+//let p = partitionHoare(&list, low: 0, high: list.count - 1)
+//print(list)
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 
 //12.  Да се напише програма, която създава масив с всички букви от латинската азбука. Да се даде възможност на потребител да въвежда дума и в резултат да се извеждат индексите на буквите от думата.
 
