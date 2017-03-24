@@ -109,14 +109,11 @@ import Foundation
 //
 //    if score > 0 && score <= 3 {
 //        print(score * 10)
-//    }
-//    else if score > 3 && score <= 6 {
+//    } else if score > 3 && score <= 6 {
 //        print(score * 100)
-//    }
-//    else if score > 6 && score <= 9 {
+//    } else if score > 6 && score <= 9 {
 //        print(score * 1000)
-//    }
-//    else {
+//    } else {
 //        print("error")
 //    }
 //    return score
@@ -318,8 +315,7 @@ import Foundation
 //
 //if firstArray == secondArray {
 //    print("The arrays are equal to each other")
-//}
-//else {
+//} else {
 //    print("The arrays are not equal")
 //}
 
@@ -619,8 +615,7 @@ import Foundation
 //        if callNumber <= callHistory.count && callNumber >= 0 {
 //
 //            callHistory.remove(at: callNumber)
-//        }
-//        else {
+//        } else {
 //            print("error")
 //        }
 //    }
@@ -769,8 +764,7 @@ import Foundation
 //
 //            if book.author == author {
 //                printInfoAboutBook(book: book)
-//            }
-//            else {
+//            } else {
 //                print("We did not found a book from author \(author) in out Library")
 //            }
 //        }
